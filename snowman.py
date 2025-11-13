@@ -1,24 +1,21 @@
-import random
+# snowman.py
 
-# List of secret words
-WORDS = ["python", "git", "github", "snowman", "meltdown"]
-
-
-def get_random_word():
-    """Selects a random word from the list."""
-    return WORDS[random.randint(0, len(WORDS) - 1)]
-
-
-def play_game():
-    secret_word = get_random_word()
-    print("Welcome to Snowman Meltdown!")
-    print("Secret word selected: " + secret_word)  # for testing, later remove this line
-
-    # TODO: Build your game loop here.
-    # For now, simply prompt the user once:
-    guess = input("Guess a letter: ").lower()
-    print("You guessed:", guess)
-
+from game_logic import play_game, play_again
 
 if __name__ == "__main__":
     play_game()
+    play_again()
+# snowman.py
+"""Entry point for the Snowman Meltdown game."""
+
+from game_logic import play_game, play_again
+
+
+def main():
+    """Run the game and optionally restart based on user input."""
+    play_game()
+    play_again()
+
+
+if __name__ == "__main__":
+    main()
