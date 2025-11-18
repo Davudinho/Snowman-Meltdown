@@ -1,20 +1,16 @@
 # snowman.py
 
-from game_logic import play_game, play_again
-
-if __name__ == "__main__":
-    play_game()
-    play_again()
-# snowman.py
-"""Entry point for the Snowman Meltdown game."""
-
-from game_logic import play_game, play_again
+from game_logic import play_game
 
 
 def main():
     """Run the game and optionally restart based on user input."""
-    play_game()
-    play_again() # nochmal
+    while True:
+        play_game()
+        again = input("Möchtest du noch eine Runde spielen? (y/n): ").lower().strip()
+        if again not in ("y", "yes"):
+            print("Vielen Dank, dass du Snowman Meltdown spielst! Stay cool!")
+            break
 
 
 if __name__ == "__main__":
